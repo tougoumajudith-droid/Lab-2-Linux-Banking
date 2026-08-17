@@ -3,13 +3,16 @@
 ## Technical Implementation
 
 ### SSH Hardening
-SSH key-based authentication was configured between the server and client(s), with password authentication disabled in sshd_config. SSH key pairs were generated on the client and the public key was deployed to the server, with access validated during testing.
+SSH key-based authentication was configured between the server and clients, with password authentication disabled in sshd_config. SSH key pairs were generated on the client and the public key was deployed to the server, with access validated during testing.
 
 ### Networking
 Static networking was configured to ensure all VMs (server and clients) could reliably reach each other.
 
 ### Identity & Access Management (Least Privilege)
-Three Linux groups were created ( finance-team, it-admin, readonly-auditor), with users mapped to each following the principle of least privilege. Dedicated data folders were created per group, with ownership (chown) and permissions (chmod) matched to each role's actual access needs. Two Bash scripts were written and tested (see /scripts) to automate user creation and group assignment. These were kept as two separate scripts intentionally, so account creation and access assignment remain distinct actions requiring separate review.
+Three Linux groups were created ( finance-team, it-admin, readonly-auditor), with users mapped to each following the principle of least privilege. Dedicated data folders were created per group, with ownership (chown) and permissions (chmod) matched to each role's actual access needs. 
+
+### SCRIPTING 
+Two Bash scripts were written and tested to automate user creation and group assignment. These were kept as two separate scripts intentionally, so account creation and access assignment remain distinct actions requiring separate review.
 
 ### File Sharing & Web Services
 Samba was installed and configured to share role-specific folders over the network, enforcing group-based access ('valid users = @groupname') consistent with the Linux permission model. Apache was installed and configured to host a placeholder internal intranet page. Access controls were validated end-to-end from a Windows client by logging in as different users per role and confirming permissions matched the intended least-privilege design, including read-only enforcement for the auditor role. Test files were added to each shared folder with matching ownership and permissions to confirm behavior.
