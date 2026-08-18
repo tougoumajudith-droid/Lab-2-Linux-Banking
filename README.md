@@ -28,3 +28,6 @@ A disk usage report script was written , monitoring the three sensitive data fol
 
 0 4 1 * * /data/disk_report.sh >> /var/log/disk_report_cron.log 2>&1
 0 5 1 * * /data/log_cleanup.sh >> /var/log/log_cleanup_cron.log 2>&1
+
+### Web Application & Backup
+A functional internal banking login page was built using PHP + html , and Apache, connecting to PostgreSQL through a dedicated role ('web_login') . A daily automated database backup was implemented using 'pg_dump', scheduled via 'cron' with success/failure logging.
