@@ -31,3 +31,7 @@ A disk usage report script was written , monitoring the three sensitive data fol
 
 ### Web Application & Backup
 A functional internal banking login page was built using PHP + html , and Apache, connecting to PostgreSQL through a dedicated role ('web_login') . A daily automated database backup was implemented using 'pg_dump', scheduled via 'cron' with success/failure logging.
+
+## Risk assessment
+
+
