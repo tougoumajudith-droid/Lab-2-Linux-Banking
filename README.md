@@ -34,4 +34,9 @@ A functional internal banking login page was built using PHP + html , and Apache
 
 ## Risk assessment
 
+## Risk Assessment Context
 
+Acting as a Cyber Risk Analyst engaged by a regional bank (Banque Régionale du Québec), this phase evaluates the technology and cyber risk of the transaction processing environment built in this lab.
+
+T
+Each risk is scored (Likelihood × Impact) and mapped to the relevant frameworks : OSFI B-13, PCI DSS v4.0, CIS Controls v8, and NIST SP 800-53 (via NIST CSF 2.0) -  with a documented recommendation, priority, and risk owner, producing a risk register intended to give leadership a prioritized, actionable view of the environment's technology and Cyber risk posture.
