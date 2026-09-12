@@ -7,6 +7,7 @@ archive_dir="/data/bank_archives"
 today=$(date +%Y-%m-%d)
 
 # Bloc 1 : for PostgreSQL's logs 
+# This script compress all the logs olther than 30 days and sent them to a file . 
 
 find /var/lib/postgresql/18/main/log/ -name "*.log" -mtime +30 -exec gzip {} \;
 sudo mv /var/lib/postgresql/18/main/log/*.gz "$archive_dir"/
@@ -25,5 +26,6 @@ sudo mv /var/log/audit/audit-"$today".log.gz "$archive_dir"/
 
 echo "auditd log has been archived as $archive_dir/audit-$today.log.gz and audit.log has been reset"
 
+# This part is supposed to prompt the administrator before deleting old files .
 
 find "$archive_dir" -name "*.gz" -mtime +30 -exec echo "Old archive found, review before deleting: {}" \;
