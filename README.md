@@ -1,5 +1,6 @@
 # Lab-2-Linux-Banking
-
+## Purpose
+A personal project to better understand the financial industry, particularly the relationship between technology and governance.
 ## Technical Implementation
 
 ### SSH Hardening
